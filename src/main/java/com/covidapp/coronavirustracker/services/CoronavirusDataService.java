@@ -24,7 +24,7 @@ public class CoronavirusDataService {
 	private List<LocationData> allStats =new ArrayList<>();
 	
 	@PostConstruct
-	@Scheduled(cron="**1***") //scheduled to run every second
+	@Scheduled(cron="* * * * * *") //scheduled to run every second
 	public void fetchVirusData() throws IOException, InterruptedException
 	{
 	  List<LocationData> newStats =new ArrayList<>();

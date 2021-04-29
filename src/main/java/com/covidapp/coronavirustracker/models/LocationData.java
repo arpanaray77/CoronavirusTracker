@@ -6,6 +6,11 @@ public class LocationData {
 	private String country;
 	private int latestTotalCases;
 	
+	public LocationData()
+	{
+		
+	}
+	
 	public String getState() {
 		return state;
 	}
