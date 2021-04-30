@@ -55,7 +55,7 @@ public class CoronavirusDataService {
 		  data.setState(record.get("Province/State"));
 		  data.setCountry(record.get("Country/Region"));
 		  data.setLatestTotalCases(Integer.parseInt(record.get(record.size()-1)));
-	      System.out.println(data.getCountry()+"  "+data.getLatestTotalCases());
+	      //System.out.println(data.getCountry()+"  "+data.getLatestTotalCases());
           newStats.add(data);
 	  }
 	  this.allStats = newStats;
