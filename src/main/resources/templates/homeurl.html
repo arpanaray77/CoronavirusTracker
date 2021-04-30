@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>CoronaVirus Tracker</h1>
-</body>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>CoronaVirus Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  
+    <h1>Product list</h1>
+  
+    <table>
+      <tr>
+        <th>STATE</th>
+        <th>COUNTRTY</th>
+        <th>TOTAL CASES</th>
+      </tr>
+      <tr th:each="dataDetails : ${data}">
+        <td th:text="${dataDetails.state}"></td>
+        <td th:text="${dataDetails.country}"></td>
+        <td th:text="${dataDetails.latestTotalCases}">0</td>
+      </tr>
+    </table>
+  
+  </body>
+
 </html>

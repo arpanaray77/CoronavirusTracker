@@ -23,6 +23,16 @@ public class CoronavirusDataService {
 	public static String VIRUS_DATA_URL="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
 	private List<LocationData> allStats =new ArrayList<>();
 	
+	public List<LocationData> getAllStats() {
+		return allStats;
+	}
+
+	public void setAllStats(List<LocationData> allStats) {
+		this.allStats = allStats;
+	}
+
+
+
 	@PostConstruct
 	@Scheduled(cron="* * * * * *") //scheduled to run every second
 	public void fetchVirusData() throws IOException, InterruptedException
