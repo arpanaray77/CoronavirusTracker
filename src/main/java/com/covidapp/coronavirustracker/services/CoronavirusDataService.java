@@ -52,9 +52,13 @@ public class CoronavirusDataService {
 	  for (CSVRecord record : records) {
 		  
 		  LocationData data=new LocationData();
-		  data.setState(record.get("Province/State"));
+		  if(record.get("Province/State").length()>0) 
+		      data.setState(record.get("Province/State"));
+		  else
+			  data.setState("Capital");
 		  data.setCountry(record.get("Country/Region"));
 		  data.setLatestTotalCases(Integer.parseInt(record.get(record.size()-1)));
+		  data.setDiffrenceFromPrevDay(Math.abs(Integer.parseInt(record.get(record.size()-2))-Integer.parseInt(record.get(record.size()-1))));
 	      //System.out.println(data.getCountry()+"  "+data.getLatestTotalCases());
           newStats.add(data);
 	  }
